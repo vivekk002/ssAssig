@@ -66,24 +66,9 @@ function App() {
 
   const navItems = ["How It Works", "Why Choose Us", "Testimonials", "Contact"];
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   return (
     <div className="w-screen min-h-screen bg-[#f8fafc] dark:bg-[#0f172a] text-[#1e293b] dark:text-[#e2e8f0] font-['Inter']">
       <div className="w-full max-w-none">
-        {/* Navbar */}
         <motion.header
           initial={{ y: -100 }}
           animate={{ y: 0 }}
@@ -99,7 +84,6 @@ function App() {
             SoftSell
           </motion.h1>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
               <motion.a
@@ -120,7 +104,6 @@ function App() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            {/* Mobile Menu Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -153,7 +136,6 @@ function App() {
               </svg>
             </motion.button>
 
-            {/* Theme Toggle Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -207,7 +189,6 @@ function App() {
           </div>
         </motion.header>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -229,7 +210,7 @@ function App() {
                     className={`text-left p-2 rounded-lg transition-colors ${
                       activeSection === item.toLowerCase().replace(/\s+/g, "-")
                         ? "bg-[#3b82f6] dark:bg-[#60a5fa] text-white"
-                        : "hover:bg-[#f1f5f9] dark:hover:bg-[#334155] text-[#1e293b] dark:text-[#e2e8f0]"
+                        : "hover:bg-[#f1f5f9] dark:hover:bg-[#0f172a] text-[#1e293b] dark:text-[#e2e8f0] bg-white dark:bg-[#1e293b]"
                     }`}
                   >
                     {item}
@@ -240,7 +221,6 @@ function App() {
           )}
         </AnimatePresence>
 
-        {/* Back to Top Button */}
         <AnimatePresence>
           {showBackToTop && (
             <motion.button
@@ -269,29 +249,29 @@ function App() {
           )}
         </AnimatePresence>
 
-        {/* Main Content */}
         <main className="pt-16">
-          {/* Hero Section */}
           <motion.section
-            initial="initial"
-            animate="animate"
-            variants={fadeInUp}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="p-8 text-center bg-[#f8fafc] dark:bg-[#0f172a]"
           >
             <motion.h2
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-4xl font-bold mb-2 text-[#1e293b] dark:text-[#e2e8f0]"
             >
               Sell Your Unused Software Licenses
             </motion.h2>
             <motion.p
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="mb-4 text-[#3b82f6] dark:text-[#60a5fa]"
             >
               Fast, secure, and hassle-free. Get paid for what you don't use.
             </motion.p>
             <motion.button
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-[#3b82f6] hover:bg-[#2563eb] dark:bg-[#60a5fa] dark:hover:bg-[#3b82f6] text-white px-6 py-3 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
@@ -300,17 +280,16 @@ function App() {
             </motion.button>
           </motion.section>
 
-          {/* How It Works */}
           <motion.section
             id="how-it-works"
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={staggerContainer}
             className="p-8 bg-white dark:bg-[#1e293b] scroll-mt-16"
           >
             <motion.h3
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-semibold mb-4 text-[#1e293b] dark:text-[#e2e8f0]"
             >
               How It Works
@@ -323,7 +302,8 @@ function App() {
               ].map((step, i) => (
                 <motion.div
                   key={i}
-                  variants={fadeInUp}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.03 }}
                   className="p-4 text-center border border-[#3b82f6] dark:border-[#60a5fa] gap-3 rounded-lg hover:border-[#2563eb] dark:hover:border-[#3b82f6] hover:bg-[#f8fafc] dark:hover:bg-[#0f172a] transition-colors duration-300"
                 >
@@ -343,17 +323,16 @@ function App() {
             </div>
           </motion.section>
 
-          {/* Why Choose Us */}
           <motion.section
             id="why-choose-us"
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={staggerContainer}
             className="p-8 bg-[#f8fafc] dark:bg-[#0f172a] scroll-mt-16"
           >
             <motion.h3
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-semibold mb-4 text-[#1e293b] dark:text-[#e2e8f0]"
             >
               Why Choose Us
@@ -367,7 +346,8 @@ function App() {
               ].map((feature, i) => (
                 <motion.li
                   key={i}
-                  variants={fadeInUp}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.02 }}
                   className="border border-[#3b82f6] dark:border-[#60a5fa] p-4 rounded-lg hover:border-[#2563eb] dark:hover:border-[#3b82f6] hover:bg-white dark:hover:bg-[#1e293b] transition-colors duration-300"
                 >
@@ -389,17 +369,16 @@ function App() {
             </ul>
           </motion.section>
 
-          {/* Testimonials */}
           <motion.section
             id="testimonials"
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={staggerContainer}
             className="p-8 bg-white dark:bg-[#1e293b] scroll-mt-16"
           >
             <motion.h3
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-semibold mb-4 text-[#1e293b] dark:text-[#e2e8f0]"
             >
               Testimonials
@@ -421,7 +400,8 @@ function App() {
               ].map((testimonial, i) => (
                 <motion.blockquote
                   key={i}
-                  variants={fadeInUp}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.02 }}
                   className="border-l-4 border-[#3b82f6] dark:border-[#60a5fa] pl-4 bg-[#f8fafc] dark:bg-[#0f172a] p-4 rounded-r-lg"
                 >
@@ -437,27 +417,28 @@ function App() {
             </div>
           </motion.section>
 
-          {/* Contact Form */}
           <motion.section
             id="contact"
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={staggerContainer}
             className="p-8 bg-[#f8fafc] dark:bg-[#0f172a] scroll-mt-16"
           >
             <motion.h3
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-semibold mb-4 text-[#1e293b] dark:text-[#e2e8f0]"
             >
               Contact Us
             </motion.h3>
             <motion.form
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="grid gap-4 max-w-lg mx-auto"
             >
               <motion.input
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 type="text"
                 placeholder="Name"
                 className="border border-[#3b82f6] dark:border-[#60a5fa] p-2 rounded-lg focus:border-[#2563eb] dark:focus:border-[#3b82f6] focus:outline-none transition-colors duration-300 bg-white dark:bg-[#1e293b] text-[#1e293b] dark:text-[#e2e8f0] placeholder-[#64748b] dark:placeholder-[#94a3b8]"
@@ -465,7 +446,8 @@ function App() {
                 aria-label="Your name"
               />
               <motion.input
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 type="email"
                 placeholder="Email"
                 className="border border-[#3b82f6] dark:border-[#60a5fa] p-2 rounded-lg focus:border-[#2563eb] dark:focus:border-[#3b82f6] focus:outline-none transition-colors duration-300 bg-white dark:bg-[#1e293b] text-[#1e293b] dark:text-[#e2e8f0] placeholder-[#64748b] dark:placeholder-[#94a3b8]"
@@ -473,14 +455,16 @@ function App() {
                 aria-label="Your email"
               />
               <motion.input
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 type="text"
                 placeholder="Company"
                 className="border border-[#3b82f6] dark:border-[#60a5fa] p-2 rounded-lg focus:border-[#2563eb] dark:focus:border-[#3b82f6] focus:outline-none transition-colors duration-300 bg-white dark:bg-[#1e293b] text-[#1e293b] dark:text-[#e2e8f0] placeholder-[#64748b] dark:placeholder-[#94a3b8]"
                 aria-label="Your company"
               />
               <motion.select
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="border border-[#3b82f6] dark:border-[#60a5fa] p-2 rounded-lg focus:border-[#2563eb] dark:focus:border-[#3b82f6] focus:outline-none transition-colors duration-300 bg-white dark:bg-[#1e293b] text-[#1e293b] dark:text-[#e2e8f0]"
                 aria-label="License type"
               >
@@ -490,14 +474,16 @@ function App() {
                 <option>Design Software</option>
               </motion.select>
               <motion.textarea
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 placeholder="Message"
                 className="border border-[#3b82f6] dark:border-[#60a5fa] p-2 rounded-lg focus:border-[#2563eb] dark:focus:border-[#3b82f6] focus:outline-none transition-colors duration-300 bg-white dark:bg-[#1e293b] text-[#1e293b] dark:text-[#e2e8f0] placeholder-[#64748b] dark:placeholder-[#94a3b8]"
                 required
                 aria-label="Your message"
               ></motion.textarea>
               <motion.button
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
@@ -509,7 +495,6 @@ function App() {
           </motion.section>
         </main>
 
-        {/* Add ChatWidget */}
         <ChatWidget />
       </div>
     </div>
